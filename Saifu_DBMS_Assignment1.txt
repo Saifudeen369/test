@@ -1,0 +1,55 @@
+create table books(accno int  primary key unique,title varchar(100)unique not null, author varchar(50) unique not null,price float(6,2),type ENUM('lending','reference'),availability ENUM('yes','no'),publisherid int);
+
+create table publishers(publisherid int auto_increment primary key,name varc
+har(50) unique not null,address varchar(100));
+
+
+create table members(memberid int auto_increment primary key,name varchar(50) not null,addres varchar(100),type ENUM('staff','student'));
+
+create table issues(issueid int auto_increment primary key,memberid int,accno int,issuedate date,duedate date);
+
+create table returns(returnid int auto_increment primary key,memberid int,accno int,returndate date,fine int default 0 check(fine>=0));
+
+
+alter table books add constraint books_fkey_publisherid foreign key(publisherid) references publishers(publisherid);
+
+alter table issues add constraint issues_fkey_memberid foreign key(memberid) references members(memberid);
+
+alter table issues add constraint issues_fkey_accno foreign key(accno) references books(accno);
+----------PUBLISHERS-------------------------------------------------------------------
+insert into publishers values(101,'DC BOOKS','KOTTAYAM,KERALA');
+
+insert into publishers values(102,'Saikatham Books','CALICUT,KERALA');
+
+insert into publishers values(103,'Current Books','TRIVANDRUM,KERALA');
+
+insert into publishers values(104,'Green Books','ALAPPUZHA,KERALA');
+
+insert into publishers values(105,'Mathrubhumi Books','THRISSUR,KERALA');
+
+---------------BOOKS------------------------------------------------------------
+insert into books values(1,'MALABAR REVOLUTION','K Madhavan',500.00,'lending','yes',101);
+
+insert into books values(2,'CHEMMEEN','Thakazhi',500.00,'lending','yes',104);
+
+insert into books values(3,'KHASAKINTE ITHIHASAM','O.V Vijayan',250,'lending','yes',103);
+
+insert into books values(4,'SHERLOCK HOLMES','Arthur Conan Doyal',300,'reference','no',105);
+
+insert into books values(5,'Manj','M.T Vasudevan Nair ',120,'lending','no',102);
+
+
+------------------MEMBERS------------------------------------------------------------
+
+insert into members values(201,'Saifu','Perinthalmanna,kerala,india','student');
+
+insert into members values(202,'Naheel','Ponnani,kerala,india','student
+');
+
+insert into members values(203,'Eswar Das','Thavanur,kerala,india','student');
+
+insert into members values(204,'Geever C Zacharias','Thrissur,kerala,india','staff');
+
+insert into members values(205,'Balachandran KP','kollam,kerala,india','staff');
+
+
