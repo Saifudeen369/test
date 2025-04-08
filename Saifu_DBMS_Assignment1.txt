@@ -52,4 +52,26 @@ insert into members values(204,'Geever C Zacharias','Thrissur,kerala,india','sta
 
 insert into members values(205,'Balachandran KP','kollam,kerala,india','staff');
 
+--------------------ISSUES--------------------------------------------------------
+insert into issues values(501,201,1,'2025-01-15','2025-02-04');
+
+insert into issues values(502,203,4,'2025-06-13','2025-07-05');
+
+insert into issues values(503,204,5,'2024-12-15','2025-01-05');
+
+insert into issues values(504,204,3,'2025-04-08','2025-05-13');
+
+insert into issues values(505,205,5,'2023-12-10','2024-11-10');
+
+-----------------RETURNS-----------------------------------------------------
+
+insert into returns values(1001,201,1,'2025-02-10',20);
+
+insert into returns values(1002,203,4,'2025-07-11',10);
+
+insert into returns values(1003,204,5,'2025-01-05',0);
+
+insert into returns values(1004,204,3,'2025-05-13',0);
+
+insert into returns values(1005,205,5,'2024-11-07',0);
 
