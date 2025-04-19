@@ -1,7 +1,6 @@
 create table books(accno int  primary key unique,title varchar(100)unique not null, author varchar(50) unique not null,price float(6,2),type ENUM('lending','reference'),availability ENUM('yes','no'),publisherid int);
 
-create table publishers(publisherid int auto_increment primary key,name varc
-har(50) unique not null,address varchar(100));
+create table publishers(publisherid int auto_increment primary key,name varchar(50) unique not null,address varchar(100));
 
 
 create table members(memberid int auto_increment primary key,name varchar(50) not null,addres varchar(100),type ENUM('staff','student'));
